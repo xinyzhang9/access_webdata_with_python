@@ -1,3 +1,2 @@
-# Access Web Data With Python
-I am following the recourses and doing assignments of the course on Coursea.  
-https://www.coursera.org/learn/python-network-data  
+# Learn Python and Django
+I am learning Python and doing some algorithms on leetcode. Also I am doing projects using django.
