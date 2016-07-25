@@ -12,9 +12,9 @@ class Solution(object):
         dp = []
         for i in range(size):
             low,high = 0, len(dp)-1
-            print 'low','high',low,high
+            # print 'low','high',low,high
             while low <= high:
-                print 'low','high',low,high
+                # print 'low','high',low,high
                 mid = low + (high-low)/2
                 if dp[mid][1] < nums[i][1]:
                     low = mid + 1
@@ -24,7 +24,7 @@ class Solution(object):
                 dp[low] = nums[i]
             else:
                 dp.append(nums[i])
-            print 'dp',dp
+            # print 'dp',dp
         return len(dp)
                 
 s = Solution()
