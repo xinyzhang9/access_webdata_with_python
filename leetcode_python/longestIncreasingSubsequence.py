@@ -20,3 +20,22 @@ class Solution(object):
                 if nums[j] < nums[i]:
                     res[i] = max(res[i],res[j]+1)
         return max(res)
+
+
+        ''' O(nLog(n))
+        dp = []
+        for i in range(len(nums)):
+            low,high = 0,len(dp)-1
+            while low <= high:
+                mid = low + (high-low)/2
+                if dp[mid] < nums[i]:
+                    low = mid + 1
+                else:
+                    high = mid - 1
+            if low < len(dp):
+                dp[low] = nums[i]
+            else:
+                dp.append(nums[i])
+        return len(dp)
+
+        '''
