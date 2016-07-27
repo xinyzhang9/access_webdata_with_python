@@ -41,3 +41,5 @@ s.generateMatrix(3)
         #     i += di
         #     j += dj
         # return res
+
+# https://discuss.leetcode.com/topic/19130/4-9-lines-python-solutions
