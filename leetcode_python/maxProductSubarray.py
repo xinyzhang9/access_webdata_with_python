@@ -15,7 +15,4 @@ class Solution(object):
         for i in range(1,len(nums)):
             f.append(max(f[i-1]*nums[i],g[i-1]*nums[i],nums[i]))
             g.append(min(f[i-1]*nums[i],g[i-1]*nums[i],nums[i]))
-        max_v = f[0]
-        for i in range(len(f)):
-            max_v = max(max_v,f[i])
-        return max_v
+        return max(f)

@@ -25,13 +25,13 @@ class Solution(object):
         ''' O(nLog(n))
         dp = []
         for i in range(len(nums)):
-            low,high = 0,len(dp)-1
-            while low <= high:
+            low,high = 0,len(dp)
+            while low < high:
                 mid = low + (high-low)/2
                 if dp[mid] < nums[i]:
                     low = mid + 1
                 else:
-                    high = mid - 1
+                    high = mid
             if low < len(dp):
                 dp[low] = nums[i]
             else:
