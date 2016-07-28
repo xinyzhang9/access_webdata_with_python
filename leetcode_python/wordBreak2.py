@@ -35,3 +35,9 @@ class Solution(object):
         for i in range(len(lists)):
             lists[i] += " "+word
         return lists
+
+
+s = Solution()
+test = "a"
+wordDict = ["a"]
+print s.wordBreak(test,wordDict)
