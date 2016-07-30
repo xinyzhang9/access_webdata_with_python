@@ -7,6 +7,7 @@
 
 # Return 3.
 
+# https://discuss.leetcode.com/topic/9488/easy-to-understand-dp-in-java
 class Solution(object):
     def numDistinct(self, s, t):
         """
@@ -23,4 +24,3 @@ class Solution(object):
                 else:
                     dp[i+1][j+1] = dp[i+1][j] + dp[i][j]
         return dp[-1][-1]
-        
