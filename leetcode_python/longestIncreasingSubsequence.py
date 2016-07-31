@@ -12,19 +12,19 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        if not nums:
-            return 0
-        res = [1] * len(nums)
-        for i in range(1,len(nums)):
-            for j in range(0,i):
-                if nums[j] < nums[i]:
-                    res[i] = max(res[i],res[j]+1)
-        return max(res)
+        # if not nums:
+        #     return 0
+        # res = [1] * len(nums)
+        # for i in range(1,len(nums)):
+        #     for j in range(0,i):
+        #         if nums[j] < nums[i]:
+        #             res[i] = max(res[i],res[j]+1)
+        # return max(res)
 
 
-        ''' O(nLog(n))
         dp = []
         for i in range(len(nums)):
+            print 'i-nums',i,nums[i],dp
             low,high = 0,len(dp)
             while low < high:
                 mid = low + (high-low)/2
@@ -32,10 +32,14 @@ class Solution(object):
                     low = mid + 1
                 else:
                     high = mid
+            print 'low',low
             if low < len(dp):
                 dp[low] = nums[i]
             else:
                 dp.append(nums[i])
+            print dp
         return len(dp)
 
-        '''
+s = Solution()
+nums = [10, 9, 2, 5, 3, 7, 101, 18]
+s.lengthOfLIS(nums)
