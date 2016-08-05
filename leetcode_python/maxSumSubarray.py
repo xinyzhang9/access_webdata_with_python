@@ -10,9 +10,7 @@ class Solution(object):
         """
         f = []
         f.append(nums[0])
-        max_v = f[0]
         for i in range(1,len(nums)):
             f.append(max(f[i-1]+nums[i],nums[i]))
-            max_v = max(max_v,f[i])
         
-        return max_v
+        return max(f)
