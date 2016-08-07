@@ -20,7 +20,8 @@ class Solution(object):
                 pre, cur = cur, cur.right
             else:
                 p = cur.left
-                while p.right and p.right != cur: p = p.right
+                while p.right and p.right != cur: 
+                    p = p.right
                 if not p.right:
                     p.right = cur
                     cur = cur.left
