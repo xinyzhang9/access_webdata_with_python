@@ -4,18 +4,32 @@
 
 </head>
 <body>
-	<ul id = "parent">
-		<li id = "l1"> Item 1 </li>
-		<li id = "l2"> Item 2 </li>
-		<li id = "l3"> Item 3 </li>
-		<li id = "l4"> Item 4 </li>
-		<li id = "l5"> Item 5 </li>
-	</ul>
+	<div id = "div1">
+		<ul id = "parent">
+			<li id = "l1"> Item 1 </li>
+			<li id = "l2"> Item 2 </li>
+			<li id = "l3"> Item 3 </li>
+			<li id = "l4"> Item 4 </li>
+			<li id = "l5"> Item 5 </li>
+		</ul>
+	</div>
+	
+	<div id = "div2">
+		<p>Test delegation matching.</p>
+		<a href="#" class = "classA">link1</a>
+		<a href="#" class = "classB">link2</a>
+	</div>
 	<script type="text/javascript">
 		document.getElementById("parent").addEventListener("click",function(e){
 			if(e.target && e.target.nodeName == 'LI'){
 				console.log("List Item", e.target.id.slice(1),"was clicked!");
 			}
+		})
+
+		document.getElementById("div2").addEventListener("click",function(e){
+			if (e.target && e.target.matches('a.classA')) {
+				console.log("Anchor was clicked!")
+			};
 		})
 	</script>
 </body>
