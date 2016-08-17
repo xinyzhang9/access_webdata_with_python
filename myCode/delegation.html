@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title>delegation</title>
+
+</head>
+<body>
+	<ul id = "parent">
+		<li id = "l1"> Item 1 </li>
+		<li id = "l2"> Item 2 </li>
+		<li id = "l3"> Item 3 </li>
+		<li id = "l4"> Item 4 </li>
+		<li id = "l5"> Item 5 </li>
+	</ul>
+	<script type="text/javascript">
+		document.getElementById("parent").addEventListener("click",function(e){
+			if(e.target && e.target.nodeName == 'LI'){
+				console.log("List Item", e.target.id.slice(1),"was clicked!");
+			}
+		})
+	</script>
+</body>
+</html>
