@@ -25,7 +25,7 @@ Trie.prototype.insert = function(word) {
             child = new TrieNode();
             node.childs.set(c,child);
         }
-        node = child;
+        node = child; //propagate node
     }
     node.isWord = true;
 };
