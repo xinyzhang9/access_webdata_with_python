@@ -33,6 +33,41 @@ partial sum
 ### Matrix  
 ### Neighbor  
 ## Big Data
+
 # Algorithm Structure
+## Iteration
+reverse linkedlist
+## recursion
+happy number
+reverse linkedlist
+## search
+### Depth first search  
+friend circles  
+square sum  
+### Breath first search  
+binary tree vertical iteration  
+clone graph  
+### A* Search  
+square sum  
+## Dynamic Programming  
+Fibonacci  
+prime factor  
+square sum  
+## Greedy  
+Gas station  
+Gas sation ii  
+## Divide and Conquer  
+Find kth smallest number  
+## System Design  
+LRU Cache  
+Calculator  
+Snake  
+### Game
+Snake  
+## Math  
+### Bit  
+### Probability  
+### Equation
+
 
 
