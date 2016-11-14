@@ -97,3 +97,41 @@ public class Solution{
   }
 }
 ```
+## LinkedHashMap
+```
+import java.io.*;
+import java.util.*;
+
+class LRUCache<K,V> extends LinkedHashMap<K,v>{
+  private int capacity;
+  LRUCache(int capacity){
+    super(128,0.75f,true);
+    this.capacity = capicity;
+  }
+  @Override
+  public boolean removeEldestEntry(Map.Entry<K,V> eldest){
+    return size() > capacity;
+  }
+}
+
+public class Solution{
+  public static void main(String[] args) throws Exception{
+    Scanner in = new Scanner(new File('input.txt'));
+    
+    int capacity = in.nextInt();
+    while(capacity != -1){
+      LRUCache cache = new LRUCache(capacity);
+      int m = in.nextInt(); // num of command
+      
+      while(m-- != 0){
+        String op = in.next();
+        if(op.equals('SET)) cache.put(in.nextInt(),in.nextInt());
+        else System.out.println(cache.get(in.nextInt()));
+      }
+      
+      capacity = in.nextInt();
+    }
+    in.close();
+  }
+}
+```
