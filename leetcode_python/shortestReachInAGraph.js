@@ -1,3 +1,37 @@
+//pass 3/6 test cases
+function processData(input) {
+    //Enter your code here
+    let _input = input.split('\n').map(function(x){return x.trim()});
+    let cursor = 0;
+    let num_query = parseInt(_input[cursor++]);
+   
+    while(num_query--){
+        let num_nodes, num_edges;
+        
+        [num_nodes, num_edges] = _input[cursor++].split(' ').map(function(x){return parseInt(x)});
+        let g = new Graph(num_nodes);
+        while(num_edges--){
+            g.connect(..._input[cursor++].split(' ').map(function(x){return parseInt(x)}));
+        }
+        let startNode = parseInt(_input[cursor++]);
+        let res = [];
+        for(let j = 1; j <= num_nodes; j++){
+            if(j === startNode) continue;
+            let path_length = g.shortestPath(startNode,j);
+            if(path_length === -1){
+                res.push(-1);
+            }else{
+                 res.push((path_length-1)*6);
+            }
+            
+        }
+        let str = res.join(' ');
+        console.log(str);
+        
+    }
+    
+}
+
 function Graph(n){ // n is number of nodes
     this.NodeMap = new Map();
     this.nodes = []; //nodes
@@ -40,7 +74,7 @@ Graph.prototype.hasPath = function(s,d){
 		}
 	}
 
-	return false;
+	return -1;
 }
 
 Graph.prototype.shortestPath = function(s,d) {
@@ -69,8 +103,7 @@ Graph.prototype.shortestPath = function(s,d) {
         }
         path.push(u.id);
         path.reverse();
-    	console.log(path);
-        return path.length-1;
+    	return path.length;
       }
       predecessor.set(v,u);
       queue.push(v);
@@ -91,11 +124,13 @@ function Node(id){
     this.childrenId = [];
 }
 
-//test
-var g = new Graph(4);
-g.connect(1,2);
-g.connect(1,3);
-// console.log(g.hasPath(1,2));
-// console.log(g.hasPath(1,3));
-// console.log(g.hasPath(1,4));
-g.shortestPath(1,2);
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+_input = "";
+process.stdin.on("data", function (input) {
+    _input += input;
+});
+
+process.stdin.on("end", function () {
+   processData(_input);
+});
