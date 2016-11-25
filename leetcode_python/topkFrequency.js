@@ -18,10 +18,11 @@ var topKFrequent = function(nums, k) {
         }
     }
     
-    let sortable = [];
-    for(let [k,v] of map.entries()){
-        sortable.push([k,v]);
-    }
+    // let sortable = [];
+    // for(let [k,v] of map.entries()){
+    //     sortable.push([k,v]);
+    // }
+    let sortable = Array.from(map.entries());
     
     sortable.sort(function(a,b){return b[1]-a[1];});
     
