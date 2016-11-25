@@ -1,3 +1,4 @@
+//for hackerrank problem
 function Graph(n){ // n is number of nodes
     this.NodeMap = new Map();
     this.nodes = []; //nodes
