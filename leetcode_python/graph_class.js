@@ -73,6 +73,7 @@ Graph.prototype.findPath = function(s,t){
 	return -1;
 }
 
+
 //test
 var g = new Graph(4);
 g.connect(1,2);
