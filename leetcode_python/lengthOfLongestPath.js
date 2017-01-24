@@ -1,20 +1,20 @@
 var lengthLongestPath = function(input) {
-    // console.log(input.length);
-    var paths = input.split('\n');
-    console.log(paths);
-    var stack = new Array(paths.length+1);
-    stack.fill(0);
+    var paths = input.split("\n");
+    var stack = new Array(paths.length+1).fill(0);
     var maxLen = 0;
-    paths.forEach(function(p){
+    for(var p of paths){
+        
         var lev = p.lastIndexOf('\t')+1;
+        console.log(lev);
         var curLen = stack[lev+1] = stack[lev]+p.length-lev+1;
-        console.log(curLen);
-        if(p.indexOf('.') >=0) maxLen = Math.max(maxLen,curLen-1);
-        // console.log(stack);
-    })
-
-    console.log(maxLen);
+        if(p.indexOf('.') !== -1) maxLen = Math.max(maxLen, curLen - 1);
+        // -1 means remove the trailing '\';
+        // stack = [0,4,12,21,0] => ['','dir\','dir\subdir1\','dir\subdir1\file.ext\','']
+        
+    }
     
+    console.log(stack);
+    console.log(maxLen);
     return maxLen;
 };
 
