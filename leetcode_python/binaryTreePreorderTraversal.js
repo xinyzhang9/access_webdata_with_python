@@ -24,3 +24,20 @@ var preorderTraversal = function(root) {
     }
     return res;
 };
+
+var preorderTraversal2 = function(root) {
+    let res = [];
+    if(!root) return [];
+    let stack = [root];
+    while(stack.length > 0 ){
+        var p = stack.pop();
+        res.push(p.val);
+        if(p.right){
+            stack.push(p.right);
+        }
+        if(p.left){
+            stack.push(p.left);
+        }
+    }
+    return res;
+};
