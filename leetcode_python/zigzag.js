@@ -4,15 +4,14 @@
  * @return {string}
  */
 var convert = function(s, numRows) {
+    if(numRows === 1) return s;
     var matrix = new Array(numRows).fill("");
     var inc = 1;
     var i = 0;
     Array.from(s).forEach((c)=>{
         matrix[i] += c;
-        if(i+inc >= numRows && i-inc < 0) inc = 0;
-        if(i+inc >= numRows || i+inc < 0){
-            inc = -inc;
-        }
+        // if(i+inc >= numRows && i-inc < 0) inc = 0;
+        if(i+inc >= numRows || i+inc < 0) inc = -inc;
         console.log(inc);
         i += inc;
     })
